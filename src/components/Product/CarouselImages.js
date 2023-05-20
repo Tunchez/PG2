@@ -15,7 +15,9 @@ export default function CarouselImages(props) {
     return (
       <Image
         style={styles.carousel}
-        source={{ uri: `${API_URL}${item.url}` }}
+        source={{
+          uri: `${API_URL}${item.url} ?? https://elcomercio.pe/resizer/A7EO-8vL0pB6oSsN6IVKMQLLCjo=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/3NLQKYP52JEYVD5AOVX224ASWI.jpg`,
+        }}
       />
     );
   };

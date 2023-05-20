@@ -33,15 +33,15 @@ export default function ProductList(props) {
       <Text style={styles.title}>RESULTADOS</Text>
       {map(products, (product) => (
         <TouchableWithoutFeedback
-          key={product._id}
-          onPress={() => goToProduct(product._id)}
+          key={product.id}
+          onPress={() => goToProduct(product.id)}
         >
           <View style={styles.product}>
             <View style={styles.containerImage}>
               <Image
                 style={styles.image}
                 source={{
-                  uri: `${API_URL}${product.main_image.url}`,
+                  uri: product.attributes.images.data[0].attributes.url,
                 }}
               />
             </View>

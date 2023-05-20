@@ -14,19 +14,13 @@ export default function ListProduct(props) {
   const { products } = props;
   const navigation = useNavigation();
 
-  const getImageUrl = (url) => {
-    console.log("ittttttttttttttttttttttttt", url);
-
-    return url;
-  };
-
   const goToProduct = (id) => {
     navigation.push("product", { idProduct: id });
   };
 
   return (
     <View style={styles.container}>
-      {map(products, (product) => (
+      {map(products, (product, index) => (
         <TouchableWithoutFeedback
           key={product.id}
           onPress={() => goToProduct(product.id)}
@@ -36,10 +30,7 @@ export default function ListProduct(props) {
               <Image
                 style={styles.image}
                 source={{
-                  uri:
-                    product && product.main_image && product.main_image.url
-                      ? API_URL + product.main_image.url
-                      : "https://elcomercio.pe/resizer/A7EO-8vL0pB6oSsN6IVKMQLLCjo=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/3NLQKYP52JEYVD5AOVX224ASWI.jpg",
+                  uri: "https://elcomercio.pe/resizer/A7EO-8vL0pB6oSsN6IVKMQLLCjo=/580x330/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/3NLQKYP52JEYVD5AOVX224ASWI.jpg",
                 }}
               />
               <Text style={styles.name} numberOfLines={1} ellipsizeMode="tail">

@@ -9,7 +9,9 @@ export default function NewProducts() {
   useEffect(() => {
     (async () => {
       const response = await getLastProuctsApi(30);
-      setProducts(response);
+      console.log("ttttttttttttttttttttttttttttt", response);
+
+      setProducts(response.data);
     })();
   }, []);
 

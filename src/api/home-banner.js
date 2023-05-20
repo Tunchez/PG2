@@ -9,7 +9,7 @@ export async function getBannersApi() {
         // Mapear los datos para obtener solo la URL de la imagen y el ID
         const formattedData = data.data.map((item) => ({
           id: item.id,
-          imageUrl:
+          image:
             "http://192.168.1.2:1337" +
             item.attributes.banner.data.attributes.url,
         }));

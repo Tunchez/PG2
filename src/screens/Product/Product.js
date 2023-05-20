@@ -21,9 +21,9 @@ export default function Product(props) {
   useEffect(() => {
     (async () => {
       const response = await getProductApi(params.idProduct);
-      setProduct(response);
+      setProduct(response.data);
 
-      const arrayImages = [response.main_image];
+      const arrayImages = [product.attributes.images.data[0].attributes.url];
       arrayImages.push(...response.images);
       setImages(arrayImages);
     })();

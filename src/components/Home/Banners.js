@@ -24,17 +24,18 @@ export default function Banners() {
     (async () => {
       const response = await getBannersApi();
 
-      console.log("reeeeesponse", response);
       setBanners(response);
     })();
   }, []);
 
   const renderItem = ({ item }) => {
     return (
-      <TouchableWithoutFeedback onPress={() => goToProduct(item.product._id)}>
+      <TouchableWithoutFeedback onPress={() => goToProduct(item.id)}>
         <Image
           style={styles.carousel}
-          source={{ uri: `${API_URL}${item.banner.url}` }}
+          source={{
+            uri: `${item.image}`,
+          }}
         />
       </TouchableWithoutFeedback>
     );
