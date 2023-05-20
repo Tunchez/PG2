@@ -10,7 +10,7 @@ export async function getBannersApi() {
         const formattedData = data.data.map((item) => ({
           id: item.id,
           image:
-            "http://192.168.1.2:1337" +
+            "http://192.168.1.3:1337" +
             item.attributes.banner.data.attributes.url,
         }));
         dataImage = formattedData;
